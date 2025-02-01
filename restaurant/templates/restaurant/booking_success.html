@@ -1,0 +1,14 @@
+{% extends 'restaurant/home.html' %}
+{% include 'includes/inc_menu.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Бронирование успешно!</h4>
+        <p>Ваш столик успешно забронирован. На вашу почту отправлено уведомление.</p>
+        <hr>
+        <p class="mb-0">Спасибо за выбор нашего ресторана!</p>
+    </div>
+    <a href="{% url 'restaurant:table_list' %}" class="btn btn-primary">Вернуться к списку столов</a>
+</div>
+{% endblock %}
+{% include 'includes/footer.html' %}

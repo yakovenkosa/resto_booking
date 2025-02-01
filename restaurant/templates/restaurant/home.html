@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Уютный домик</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+          background-image: url('../../../media/images/cvetl_fon.jpg'); /* Путь к изображению */
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+<!--        /* Контейнер для фонового изображения */-->
+<!--        .fullscreen-bg {-->
+<!--          height: 100vh; /* Высота на весь экран */-->
+<!--          background-image: url('../../../media/images/cvetl_fon.jpg'); /* Путь к изображению */-->
+<!--          background-size: cover; /* Растягиваем изображение на весь экран */-->
+<!--          background-position: center; /* Центрируем изображение */-->
+<!--          background-repeat: no-repeat; /* Запрещаем повторение */-->
+<!--        }-->
+
+<!--        /* Контент поверх изображения */-->
+<!--        .content {-->
+<!--          position: absolute;-->
+<!--          top: 60%;-->
+<!--          left: 50%;-->
+<!--          transform: translate(-50%, -50%);-->
+<!--          text-align: center;-->
+<!--          max-width: 1000px;-->
+<!--          color: black; /* Цвет текста */-->
+<!--        }-->
+  </style>
+</head>
+<body class="fullscreen-bg">
+{% include 'restaurant/includes/inc_menu.html'%}
+<div class="fullscreen-bg">
+    <div class="pricing-header text-center text-bold">
+        <h1 class="display-4">Уютный домик</h1>
+        <div class="content">
+            <p class="display-6">Добро пожаловать в наш Уютный домик!</p>
+            <p class="display-6">Мы рады приветствовать вас на нашем сайте, где вы можете легко и быстро забронировать столик в нашем уютном ресторане.</p>
+            <p class="display-6">Просто выберите дату, время и количество гостей, а мы позаботимся обо всём остальном. Хотите особенные условия или
+                отметить праздник? Оставьте пожелания в комментариях при бронировании, и мы с радостью учтём ваши предпочтения.</p>
+            <p class="display-6">Забронируйте столик прямо сейчас и приготовьтесь к гастрономическому путешествию!</p>
+            <p class="display-6">Мы ждём вас в ресторане Уютный домик!</p>
+        </div>
+    </div>
+</div>
+{% block content %}
+{% endblock %}
+{% include 'restaurant/includes/footer.html'%}
+
+</div>
+<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

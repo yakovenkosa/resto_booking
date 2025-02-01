@@ -1,0 +1,24 @@
+{% extends 'home.html'%}
+{% load my_tags %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        {% for table in tables %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ table.name }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$ {{ table.price }}</h1>
+                    <img src="{{ table.image | media_filter }}" alt="{{ table.name }}" class="card-img-top">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>- {{ table.description|truncatechars:100 }}</li>
+                    </ul>
+                    <a href="{% url 'restaurant:table_detail' table.id %}" class="btn btn-primary">Подробнее/Забронировать</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

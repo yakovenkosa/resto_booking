@@ -1,0 +1,13 @@
+{% extends 'restaurant/home.html'%}
+{% block title %}Удаление стола{% endblock %}
+{% include 'restaurant/includes/inc_menu.html'%}
+{% block content %}
+<h2>Удаление стола</h2>
+<p>Вы действительно хотите удалить {{ object.name }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Подтвердить</button>
+    <a href="{% url 'restaurant:table_list' %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}
+{% include 'restaurant/includes/footer.html'%}
