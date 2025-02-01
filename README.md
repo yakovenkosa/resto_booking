@@ -14,8 +14,10 @@
 
 Следуйте этим шагам для установки и настройки проекта на Вашем локальном компьютере:
 
-1. Клонируйте репозиторий: git clone https://github.com/yakovenkosa/resto_booking.git cd resto_booking
-2. Создайте виртуальную среду: python -m venv venv source venv/bin/activate # Для Linux/Mac venv\Scripts\activate # Для Windows
+1. Клонируйте репозиторий: git clone https://github.com/yakovenkosa/resto_booking.git
+   cd resto_booking
+2. Создайте виртуальную среду: python -m venv venv source venv/bin/activate
+   # Для Linux/Mac venv\Scripts\activate # Для Windows
 3. Установите зависимости: pip install -r requirements.txt
 4. Выполните миграции базы данных: python manage.py migrate
 5. Запустите сервер разработки: python manage.py runserver
