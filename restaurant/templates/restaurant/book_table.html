@@ -1,0 +1,21 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% include 'includes/inc_menu.html' %}
+{% block content %}
+<div>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Бронирование стола</h5>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Забронировать</button>
+                    <a href="{% url 'restaurant:table_list' %}" class="btn btn-primary">Назад</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% include 'includes/footer.html' %}

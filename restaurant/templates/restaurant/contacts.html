@@ -1,0 +1,24 @@
+{% extends 'restaurant/home.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="my-4">Контактная информация</h1>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Наши контакты</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li><strong>Адрес:</strong> ул. Ресторанная, 123, г. Город, Страна RU</li>
+                        <li><strong>Телефон:</strong> +7 (000) 000-00-00</li>
+                        <li><strong>Email:</strong> info@restaurant.com</li>
+                        <li><strong>Часы работы:</strong> Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 00:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
