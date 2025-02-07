@@ -4,22 +4,22 @@
         <a class="p-2 btn btn-outline-primary" href="{% url 'restaurant:home' %}">Главная страница</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'restaurant:table_list' %}">Список столов</a>
         <a class="p-2 btn btn-outline-primary" href="{% url 'restaurant:contacts' %}">Наши контакты</a>
-        {% if user.is_authenticated %}
-        <a class="p-2 btn btn-outline-primary" href="{% url 'restaurant:table_create' %}">Создать карточку стола</a>
-        {% endif%}
-        {% if user.is_authenticated %}
-        <form method="post" action="{% url 'users:logout' %}" style="display: imline">
-            {% csrf_token %}
-            <button type="submit" class="p-2 btn btn-outline-primary">Выйти</button>
-        </form>
-        {% else %}
-        <a class="p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Войти</a>
-        <a class="p-2 btn btn-outline-primary" href="{% url 'users:register' %}">Регистрация</a>
+        {% if user.is_authenticated and user.is_staff %}
+            <a class="p-2 btn btn-outline-primary" href="{% url 'restaurant:table_create' %}">Создать карточку стола</a>
         {% endif %}
         {% if user.is_authenticated %}
-        <div class="ml-auto order-last d-none d-sm-block">
-            Привет, {{ user.username }}!
-        </div>
+            <form method="post" action="{% url 'users:logout' %}" style="display: inline">
+                {% csrf_token %}
+                <button type="submit" class="p-2 btn btn-outline-primary">Выйти</button>
+            </form>
+        {% else %}
+            <a class="p-2 btn btn-outline-primary" href="{% url 'users:login' %}">Войти</a>
+            <a class="p-2 btn btn-outline-primary" href="{% url 'users:register' %}">Регистрация</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <div class="ml-auto order-last d-none d-sm-block">
+                Привет, {{ user.username }}!
+            </div>
         {% endif %}
     </nav>
 </div>
