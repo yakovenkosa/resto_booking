@@ -16,11 +16,14 @@
                         <li>- {{ table.description|truncatechars:100 }}</li>
                     </ul>
                     <a href="{% url 'restaurant:table_detail' table.id %}" class="btn btn-primary">Подробнее/Забронировать</a>
-                    <a href="{% url 'restaurant:table_update' table.id %}" class="btn btn-secondary">Редактировать стол</a>
-                    <a href="{% url 'restaurant:table_delete' table.id %}" class="btn btn-danger">Удалить стол</a>
+                    {% if user.is_staff or user.is_superuser %}
+                        <a href="{% url 'restaurant:table_update' table.id %}" class="btn btn-secondary">Редактировать стол</a>
+                        <a href="{% url 'restaurant:table_delete' table.id %}" class="btn btn-danger">Удалить стол</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+</div>
 {% endblock %}
